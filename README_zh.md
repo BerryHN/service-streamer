@@ -124,7 +124,8 @@ pip install service_streamer
         def predict(self, batch):
             return self.model.predict(batch)
 
-    streamer = Streamer(ManagedBertModel, batch_size=64, max_latency=0.1, worker_num=8, cuda_devices=(0, 1, 2, 3))
+    streamer = Streamer(ManagedBertModel, 
+     batch_size=64, max_latency=0.1, worker_num=8, cuda_devices=(0, 1, 2, 3))
     app.run(port=5005, debug=False)
     ```
     
